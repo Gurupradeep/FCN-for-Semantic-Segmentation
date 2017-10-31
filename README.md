@@ -3,7 +3,7 @@
 Implementation and testing the performance of FCN-16 and FCN-8. In addition to that CRFs are used as a post processing technique and results are compared.
 
 ## PAPERS REFERRED :
-1. **FUllY CONVOLUTIONAL NETWORKS FOR SEMANTIC SEGMENTATION**
+1. **FULLY CONVOLUTIONAL NETWORKS FOR SEMANTIC SEGMENTATION**
 * **AUTHORS** : Jonathan Long, Evan Shelhamer, Trevor Darrell
 * **LINK** : https://github.com/Gurupradeep/FCN-for-Semantic-Segmentation/blob/master/Paper/long_shelhamer_fcn.pdf
 
