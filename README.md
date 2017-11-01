@@ -15,5 +15,12 @@ Implementation and testing the performance of FCN-16 and FCN-8. In addition to t
 * **AUTHORS** :Philipp Krähenbühl, Vladlen Koltun
 * **LINK** : https://github.com/Gurupradeep/FCN-for-Semantic-Segmentation/blob/master/Paper/crf.pdf
 
+## IMPLEMENTATION STEPS :
+#### 1. Converting a classifier to dense FCN :
+The model which is used for the task of semantic segmentation is derived from VGG. VGG on it's own is meant for classification task. So to make the model suitable for dense prediction we remove the last fully connected layers of VGG and replace them with convolutions. We append a 1x1 convolution with channel dimension 21  to predict scores for each of the PASCAL classes (including background) at each of the coarse output locations, followed by a deconvolution layer to bilinearly upsample the coarse outputs to pixel-dense outputs.
+
+#### 2. Transferring features 
+
+
 
 
