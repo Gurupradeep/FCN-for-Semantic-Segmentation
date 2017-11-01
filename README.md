@@ -37,6 +37,64 @@ FCN-16's have only one skip connection which transferring the information from 4
 #### 3 . Using CRF as post processing technique :
 While predicting using FCN we gave label to each pixel independently of it's surrounding pixels, this may result in coarse segmentation. CRF takes two inputs one is the original image and the other is predicted probabilities for each pixel. The CRF which was uses a highly efficient inference algorithm for fully connected CRF models in which the pairwise edge potentials are defined by a linear combination of Gaussian kernels in an arbitrary feature space. Therby it considers the surrounding pixels also while assigning the class to particular pixel which results in better semantic segmentation results.
 
+## INSTALLATION OF REQUIRED TOOLS
+#### 1. Tensorflow
+Refer to the following link https://www.tensorflow.org/install/install_sources. Tensorflow is used as backend for Keras. The link contains installation instructions with and without gpu support
+
+#### 2. Keras
+Keras is a high-level neural networks API, written in Python and capable of running on top of TensorFlow, CNTK, or Theano. It was developed with a focus on enabling fast experimentation.
+
+* To install Keras
+
+    sudo apt-get install keras
+
+#### 3. Matplotlib
+Matplotlib is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms.
+* Refer to following link for installation instructions https://matplotlib.org/users/installing.html.
+While installing it or tensorflow number of dependencies like Numpy will be installed.
+
+#### 4.Skimage
+Scikit-image is an image processing toolbox for SciPy. It is used for loading,saving and applying various transformations like color to gray and gray to color on images.
+
+* Refer following link for installation instructions http://scikit-image.org/docs/dev/install.html
+
+#### 5. graphviz
+This package facilitates the creation and rendering of graph descriptions in the DOT language of the Graphviz graph drawing software from Python. It is required to plot the models in keras.
+* To install graphviz
+
+    sudo apt-get install graphviz
+    
+#### 6. Jupyter Notebook
+The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text
+* Refer following link for installation instructions https://www.digitalocean.com/community/tutorials/how-to-set-up-a-jupyter-notebook-to-run-ipython-on-ubuntu-16-04
+
+    
+# Quick start
+
+Run the following commands in Terminal. 
+
+    git clone https://github.com/Gurupradeep/FCN-for-Semantic-Segmentation.git
+    cd FCN-for-Semantic-Segmentation
+    jupyter notebook
+    
+It opens up all the notebooks which are there in the directory in the browser. 
+
+* FCN-16.ipynb contains code related to implementation of FCN-16.
+
+* FCN-8.ipynb contains code related to implementation of FCN-8
+* Comparison_of_fcn8_and_fcn16.ipynb has code which compares results of FCN-8 and FCN-16 models.
+* CRF.ipynb has code which is used to compare the results after applying CRF on FCN-8 and FCN-16 annotated images.
+* All the images which are used can be found in Testimages Folder(https://github.com/Gurupradeep/FCN-for-Semantic-Segmentation/tree/master/TestImages)
+
+Open respective notebooks and run the commands to reproduce the results. As we are running in jupyter notebook we can see results after executing every command.
+
+
+
+    
+
+
+
+
 
 
 
