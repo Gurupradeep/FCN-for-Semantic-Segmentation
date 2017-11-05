@@ -46,7 +46,7 @@ Keras is a high-level neural networks API, written in Python and capable of runn
 
 * To install Keras
 
-    sudo apt-get install keras
+    sudo pip install keras
 
 #### 3. Matplotlib
 Matplotlib is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms.
@@ -62,7 +62,7 @@ Scikit-image is an image processing toolbox for SciPy. It is used for loading,sa
 This package facilitates the creation and rendering of graph descriptions in the DOT language of the Graphviz graph drawing software from Python. It is required to plot the models in keras.
 * To install graphviz
 
-    sudo apt-get install graphviz
+    sudo pip install graphviz
     
 #### 6. Jupyter Notebook
 The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text
