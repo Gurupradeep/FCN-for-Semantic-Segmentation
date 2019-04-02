@@ -12,11 +12,11 @@ Implementation and testing the performance of FCN-16 and FCN-8. In addition to t
 * **LINK** : https://github.com/Gurupradeep/FCN-for-Semantic-Segmentation/blob/master/Paper/VGG.pdf
 
 3. **Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials**
-* **AUTHORS** :Philipp Krähenbühl, Vladlen Koltun
+* **AUTHORS** : Philipp Krähenbühl, Vladlen Koltun
 * **LINK** : https://github.com/Gurupradeep/FCN-for-Semantic-Segmentation/blob/master/Paper/crf.pdf
 
 ## IMPLEMENTATION STEPS :
-#### 1. Converting a classifier to dense FCN :
+#### 1. Converting a classifier to dense FCN:
 The model which is used for the task of semantic segmentation is derived from VGG. VGG on it's own is meant for classification task. So to make the model suitable for dense prediction we remove the last fully connected layers of VGG and replace them with convolutions. We append a 1x1 convolution with channel dimension 21  to predict scores for each of the PASCAL classes (including background) at each of the coarse output locations, followed by a deconvolution layer to bilinearly upsample the coarse outputs to pixel-dense outputs.
 
 #### 2. Transferring features of lower level layers to higher layers
@@ -31,11 +31,11 @@ Finally, the stride 16 predictions are upsampled back to the image.
 We call this net FCN-16s.
 FCN-16's have only one skip connection which transferring the information from 4th Max pooling layer. To improve the results further we introduce one more skip connection which transfer information from 3rd Max pooling layer also with the skip connection which transfers information from 4th Max pooling layer.
 
-* **Plot of FCN-16 Architecutre** : https://github.com/Gurupradeep/FCN-for-Semantic-Segmentation/blob/master/Plots/FCN-16_withshape.png
+* **Plot of FCN-16 Architecture** : https://github.com/Gurupradeep/FCN-for-Semantic-Segmentation/blob/master/Plots/FCN-16_withshape.png
 * **Plot of FCN-8 Architecture** : https://github.com/Gurupradeep/FCN-for-Semantic-Segmentation/blob/master/Plots/FCN-8with_shapes.png
 
-#### 3 . Using CRF as post processing technique :
-While predicting using FCN we gave label to each pixel independently of it's surrounding pixels, this may result in coarse segmentation. CRF takes two inputs one is the original image and the other is predicted probabilities for each pixel. The CRF which was uses a highly efficient inference algorithm for fully connected CRF models in which the pairwise edge potentials are defined by a linear combination of Gaussian kernels in an arbitrary feature space. Therby it considers the surrounding pixels also while assigning the class to particular pixel which results in better semantic segmentation results.
+#### 3. Using CRF as post processing technique :
+While predicting using FCN we gave label to each pixel independently of it's surrounding pixels, this may result in coarse segmentation. CRF takes two inputs one is the original image and the other is predicted probabilities for each pixel. The CRF which was uses a highly efficient inference algorithm for fully connected CRF models in which the pairwise edge potentials are defined by a linear combination of Gaussian kernels in an arbitrary feature space. Thereby it considers the surrounding pixels also while assigning the class to particular pixel which results in better semantic segmentation results.
 
 ## INSTALLATION OF REQUIRED TOOLS
 #### 1. Tensorflow
@@ -54,7 +54,7 @@ Matplotlib is a Python 2D plotting library which produces publication quality fi
 While installing it or tensorflow number of dependencies like Numpy will be installed.
 
 #### 4.Skimage
-Scikit-image is an image processing toolbox for SciPy. It is used for loading,saving and applying various transformations like color to gray and gray to color on images.
+Scikit-image is an image processing toolbox for SciPy. It is used for loading, saving and applying various transformations like color to gray and gray to color on images.
 
 * Refer following link for installation instructions http://scikit-image.org/docs/dev/install.html
 
@@ -84,7 +84,7 @@ It opens up all the notebooks which are there in the directory in the browser.
 * FCN-8.ipynb contains code related to implementation of FCN-8
 * Comparison_of_fcn8_and_fcn16.ipynb has code which compares results of FCN-8 and FCN-16 models.
 * CRF.ipynb has code which is used to compare the results after applying CRF on FCN-8 and FCN-16 annotated images.
-* All the images which are used can be found in Testimages Folder(https://github.com/Gurupradeep/FCN-for-Semantic-Segmentation/tree/master/TestImages)
+* All the images which are used can be found in `Testimages` Folder (https://github.com/Gurupradeep/FCN-for-Semantic-Segmentation/tree/master/TestImages)
 
 Open respective notebooks and run the commands to reproduce the results. As we are running in jupyter notebook we can see results after executing every command.
 
